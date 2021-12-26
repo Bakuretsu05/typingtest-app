@@ -1,0 +1,31 @@
+.WordsDisplay {
+  border: 2px solid var(--color-primary);
+  padding: 1rem;
+  border-radius: 5px;
+  color: var(--text-color--primary);
+  font-size: 2.2rem;
+  position: relative;
+  background-color: var(--background-color--brighter);
+  margin-block: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.WordsDisplay__words > p {
+  display: inline-block;
+}
+
+.WordsDisplay--red-underline {
+  text-decoration: underline;
+  text-decoration-color: red;
+  text-underline-position: under;
+}
+
+.WordsDisplay--wrong {
+  color: red;
+}
+
+.WordsDisplay--correct {
+  color: green;
+}

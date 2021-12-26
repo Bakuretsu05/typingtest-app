@@ -1,0 +1,46 @@
+.TypingTest {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70vw;
+}
+
+.TypingTest__timer {
+  font-size: 9rem;
+  color: var(--text-color--primary);
+  font-weight: 400;
+}
+
+.TypingTest__input-group {
+  display: flex;
+  justify-content: center;
+}
+
+.TypingTest__input {
+  border: 2px solid var(--color-primary);
+  margin-inline: 0.2rem;
+  border-radius: 5px;
+  font-size: 2.2rem;
+  padding: 0.3rem;
+  color: var(--text-color--primary);
+  background-color: var(--background-color--brighter);
+  text-indent: 0.4rem;
+}
+.TypingTest__input:focus {
+  outline: none;
+}
+
+.TypingTest__retry-button {
+  background-color: var(--text-color--primary);
+  border: none;
+  color: black;
+  font-size: 1.2rem;
+  padding-inline: 0.5rem;
+  font-weight: 500;
+  border-radius: 5px;
+}
+.TypingTest__retry-button:hover {
+  transition: 100ms;
+  background-color: var(--text-color--secondary);
+  cursor: pointer;
+}
