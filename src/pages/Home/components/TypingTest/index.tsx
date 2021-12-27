@@ -44,13 +44,17 @@ const TypingTest: React.FC<Props> = ({ setCount, setShowScore }) => {
   }, [reset, setQueue, setCount]);
 
   useEffect(() => {
-    if (input.includes(" ")) {
-      setCount((currCount) => {
-        return input.trim() === queue[0]
-          ? { ...currCount, correct: currCount.correct + 1 }
-          : { ...currCount, wrong: currCount.wrong + 1 };
-      });
-      cycleWords();
+    if (input.endsWith(" ")) {
+      if (input.length > 1) {
+        setCount((currCount) => {
+          return input.trim() === queue[0]
+            ? { ...currCount, correct: currCount.correct + 1 }
+            : { ...currCount, wrong: currCount.wrong + 1 };
+        });
+        cycleWords();
+      } else {
+        setInput("");
+      }
     }
   }, [input, cycleWords, queue, setCount]);
 
