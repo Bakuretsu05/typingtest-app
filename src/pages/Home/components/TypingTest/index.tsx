@@ -17,7 +17,7 @@ interface Props {
 
 const TypingTest: React.FC<Props> = ({ setCount, setShowScore }) => {
   const [input, setInput] = useState("");
-  const { enqueue, dequeue, queue, setQueue } = useQueue(getWord(15));
+  const { enqueue, dequeue, queue, setQueue } = useQueue(getWord(18));
 
   const onTimeOver = (): void => {
     setShowScore(true);
@@ -39,7 +39,7 @@ const TypingTest: React.FC<Props> = ({ setCount, setShowScore }) => {
   const retry = useCallback(() => {
     setInput("");
     reset();
-    setQueue(getWord(15));
+    setQueue(getWord(18));
     setCount({ correct: 0, wrong: 0 });
   }, [reset, setQueue, setCount]);
 
