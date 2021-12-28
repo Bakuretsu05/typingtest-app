@@ -1,0 +1,40 @@
+.ScoreCard {
+  border: 4px solid var(--color-primary);
+  color: var(--text-color--primary);
+  background-color: var(--background-color--brighter);
+  border-radius: 8px;
+  padding: 1.5rem;
+  padding-inline: 3rem;
+  position: relative;
+}
+
+.ScoreCard__card-title {
+  text-align: center;
+  font-size: 2rem;
+  border-bottom: 2px solid var(--text-color--primary);
+}
+
+.ScoreCard__WPM {
+  font-size: 3rem;
+  text-align: center;
+  margin-block: 1rem;
+}
+
+.ScoreCard__stats-container {
+  border-radius: 5px;
+  background-color: var(--background-color);
+  padding: 1rem 2rem 2rem 2rem;
+}
+
+.ScoreCard__stats {
+  margin-block: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.ScoreCard__stats-label {
+  font-weight: 600;
+}
+
+.ScoreCard__date {
+  color: var(--text-color--secondary);
+}

@@ -3,7 +3,7 @@ import "./TypingTest.css";
 import useQueue from "../../../../hooks/useQueue";
 import useTimer from "../../../../hooks/useTimer";
 import { getWord } from "../../../../wordsData";
-import WordsDisplay from "./components/WordsDisplay";
+import WordsDisplay from "./WordsDisplay";
 
 interface Props {
   setCount: React.Dispatch<
