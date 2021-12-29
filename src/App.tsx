@@ -1,10 +1,11 @@
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import "./index.css";
 import Home from "./pages/Home";
 import Scores from "./pages/Scores";
 
-export default function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
       <Navbar />
@@ -14,4 +15,6 @@ export default function App() {
       </Routes>
     </div>
   );
-}
+};
+
+export default App;

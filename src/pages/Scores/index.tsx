@@ -17,7 +17,7 @@ const nullScore = {
   date: "N/A",
 };
 
-const Scores = () => {
+const Scores: React.FC = () => {
   // SORTED by WPM
   const [scores, setScores] = useState<Score[]>(() => {
     const unsortedScores = JSON.parse(
