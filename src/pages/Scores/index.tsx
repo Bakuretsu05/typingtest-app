@@ -55,6 +55,7 @@ const Scores = () => {
             key={score.id}
             rank={index + 1}
             {...score}
+            isSelected={currentScore.id === score.id}
             onClick={displayScore}
             deleteFn={deleteScore}
           />

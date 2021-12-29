@@ -7,7 +7,7 @@
 .ScoreItem:hover {
   cursor: pointer;
   transition: ease-in 100ms;
-  filter: brightness(120%);
+  filter: brightness(125%);
 }
 
 .ScoreItem__rank {
@@ -43,4 +43,11 @@
 .ScoreItem:hover > .ScoreItem__delete-button {
   display: grid;
   place-items: center;
+}
+
+.ScoreItem--selected {
+  transition: ease-in 200ms;
+  transform: translate(-1%, -2%);
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.5);
+  filter: brightness(115%);
 }

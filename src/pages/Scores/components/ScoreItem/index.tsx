@@ -7,6 +7,7 @@ interface Props {
   correct: number;
   wrong: number;
   date: string;
+  isSelected?: boolean;
   onClick?: (id: string) => void;
   deleteFn?: (
     e: React.MouseEvent<HTMLDivElement, MouseEvent>,
@@ -20,11 +21,15 @@ const ScoreItem: React.FC<Props> = ({
   correct,
   wrong,
   date,
+  isSelected,
   onClick,
   deleteFn,
 }) => {
   return (
-    <div className="ScoreItem" onClick={() => (onClick ? onClick(id) : null)}>
+    <div
+      className={`ScoreItem ${isSelected ? "ScoreItem--selected" : ""}`}
+      onClick={() => (onClick ? onClick(id) : null)}
+    >
       <h3 className="ScoreItem__rank">{rank}</h3>
       <div className="ScoreItem__stats">
         <h3 className="ScoreItem__WPM">{correct} WPM</h3>
