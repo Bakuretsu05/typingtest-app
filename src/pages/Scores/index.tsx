@@ -19,23 +19,16 @@ const nullScore = {
 
 const Scores = () => {
   // SORTED by WPM
-  // TODO: Feature to remove a score
   const [scores, setScores] = useState<Score[]>(() => {
     const unsortedScores = JSON.parse(
       localStorage.getItem("LOCAL_SCORES") || "[]"
     );
     return unsortedScores.sort((a: Score, b: Score) => b.correct - a.correct);
   });
-  const [showScore, setShowScore] = useState<{ show: Boolean; score: Score }>({
-    show: false,
-    score: nullScore,
-  });
+  const [currentScore, setCurrentScore] = useState<Score>(nullScore);
 
   const displayScore = (id: string) => {
-    setShowScore({
-      show: true,
-      score: scores.find((score) => score.id === id) || nullScore,
-    });
+    setCurrentScore(scores.find((score) => score.id === id) || nullScore);
   };
 
   const deleteScore = (
@@ -44,6 +37,7 @@ const Scores = () => {
   ) => {
     e.stopPropagation();
     setScores((currScores) => currScores.filter((score) => score.id !== id));
+    if (currentScore.id === id) setCurrentScore(nullScore);
   };
 
   useEffect(() => {
@@ -66,11 +60,11 @@ const Scores = () => {
           />
         ))}
       </div>
-      {showScore.show && (
+      {currentScore.id !== nullScore.id && (
         <ScoreCard
-          correct={showScore.score.correct}
-          wrong={showScore.score.wrong}
-          dateSet={showScore.score.date}
+          correct={currentScore.correct}
+          wrong={currentScore.wrong}
+          dateSet={currentScore.date}
         />
       )}
     </div>
