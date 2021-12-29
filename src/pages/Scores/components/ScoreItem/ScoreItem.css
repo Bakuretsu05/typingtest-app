@@ -1,7 +1,13 @@
 .ScoreItem {
   display: grid;
-  grid-template-columns: 3rem 1fr;
+  grid-template-columns: 3rem 1fr 2.2rem;
   border-radius: 8px;
+  background-color: var(--background-color);
+}
+.ScoreItem:hover {
+  cursor: pointer;
+  transition: ease-in 100ms;
+  filter: brightness(120%);
 }
 
 .ScoreItem__rank {
@@ -12,11 +18,10 @@
 }
 
 .ScoreItem__stats {
-  background-color: var(--background-color);
   display: grid;
   grid-template-columns: 1fr 1fr;
   place-items: center;
-  padding: 1rem;
+  padding-block: 1rem;
   border-radius: 0 8px 8px 0;
 }
 
@@ -28,4 +33,14 @@
 .ScoreItem__date {
   color: var(--text-color--secondary);
   display: inline-block;
+}
+
+.ScoreItem__delete-button {
+  font-size: 1.5rem;
+  color: red;
+  display: none;
+}
+.ScoreItem:hover > .ScoreItem__delete-button {
+  display: grid;
+  place-items: center;
 }

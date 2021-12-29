@@ -8,6 +8,10 @@ interface Props {
   wrong: number;
   date: string;
   onClick?: (id: string) => void;
+  deleteFn?: (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+    id: string
+  ) => void;
 }
 
 const ScoreItem: React.FC<Props> = ({
@@ -17,6 +21,7 @@ const ScoreItem: React.FC<Props> = ({
   wrong,
   date,
   onClick,
+  deleteFn,
 }) => {
   return (
     <div className="ScoreItem" onClick={() => (onClick ? onClick(id) : null)}>
@@ -25,6 +30,14 @@ const ScoreItem: React.FC<Props> = ({
         <h3 className="ScoreItem__WPM">{correct} WPM</h3>
         <p className="ScoreItem__date">{date}</p>
       </div>
+      {deleteFn && (
+        <div
+          className="ScoreItem__delete-button"
+          onClick={(e) => deleteFn(e, id)}
+        >
+          <i className="fas fa-trash"></i>
+        </div>
+      )}
     </div>
   );
 };

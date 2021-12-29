@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ScoreCard from "../../components/ScoreCard";
 import ScoreItem from "./components/ScoreItem";
 import "./Scores.css";
@@ -20,7 +20,7 @@ const nullScore = {
 const Scores = () => {
   // SORTED by WPM
   // TODO: Feature to remove a score
-  const [scores] = useState<Score[]>(() => {
+  const [scores, setScores] = useState<Score[]>(() => {
     const unsortedScores = JSON.parse(
       localStorage.getItem("LOCAL_SCORES") || "[]"
     );
@@ -38,15 +38,31 @@ const Scores = () => {
     });
   };
 
+  const deleteScore = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+    id: string
+  ) => {
+    e.stopPropagation();
+    setScores((currScores) => currScores.filter((score) => score.id !== id));
+  };
+
+  useEffect(() => {
+    localStorage.setItem("LOCAL_SCORES", JSON.stringify(scores));
+  }, [scores]);
+
   return (
     <div className="Scores">
-      <div className="Scores__scores-container">
+      <div
+        className="Scores__scores-container"
+        style={scores.length === 0 ? { display: "none" } : {}}
+      >
         {scores.map((score, index) => (
           <ScoreItem
             key={score.id}
             rank={index + 1}
             {...score}
             onClick={displayScore}
+            deleteFn={deleteScore}
           />
         ))}
       </div>
