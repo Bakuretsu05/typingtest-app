@@ -19,3 +19,9 @@
   flex-direction: column;
   row-gap: 1rem;
 }
+
+.Scores__no-score {
+  margin-block: auto;
+  color: var(--text-color--secondary);
+  font-weight: 400;
+}

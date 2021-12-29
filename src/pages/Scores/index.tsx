@@ -46,10 +46,10 @@ const Scores: React.FC = () => {
 
   return (
     <div className="Scores">
-      <div
-        className="Scores__scores-container"
-        style={scores.length === 0 ? { display: "none" } : {}}
-      >
+      <div className="Scores__scores-container">
+        {scores.length === 0 && (
+          <h3 className="Scores__no-score">There are no local scores</h3>
+        )}
         {scores.map((score, index) => (
           <ScoreItem
             key={score.id}
