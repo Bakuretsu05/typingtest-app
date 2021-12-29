@@ -1,0 +1,31 @@
+.ScoreItem {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  border-radius: 8px;
+}
+
+.ScoreItem__rank {
+  background: var(--color-primary);
+  border-radius: 8px 0 0 8px;
+  display: grid;
+  place-items: center;
+}
+
+.ScoreItem__stats {
+  background-color: var(--background-color);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  padding: 1rem;
+  border-radius: 0 8px 8px 0;
+}
+
+.ScoreItem__WPM {
+  color: var(--text-color--primary);
+  font-size: 2rem;
+}
+
+.ScoreItem__date {
+  color: var(--text-color--secondary);
+  display: inline-block;
+}

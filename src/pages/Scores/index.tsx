@@ -10,7 +10,12 @@ interface Score {
   date: string;
 }
 
-const nullScore = { id: "N/A", correct: NaN, wrong: NaN, date: "N/A" };
+const nullScore = {
+  id: "N/A",
+  correct: NaN,
+  wrong: NaN,
+  date: "N/A",
+};
 
 const Scores = () => {
   // SORTED by WPM
